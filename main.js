@@ -3,7 +3,8 @@
 // Return: Returns a random element from the array
 function randomArrayElement (arr) {
   // Step 1a - Return a random elment from the array
-
+  let randomElement = arr[Math.floor(Math.random() * arr.length)];
+  return randomElement;
 }
 
 
@@ -13,25 +14,26 @@ function randomArrayElement (arr) {
 function generateCharacterName () {
   // Step 2a - Store a random adjective into a variable named: 'adjective'
   // from the adjectives array
-
+  let adjective = randomArrayElement(adjectives);
 
   // Step 2a - Store a random first noun into a variable named: 'firstNoun'
   // from the firstNouns array
-
+  let firstNoun = randomArrayElement(firstNouns);
 
   // Step 2a - Store a random second noun into a variable named: 'secondNoun'
   // from the secondNouns array
-
+  let secondNoun = randomArrayElement(secondNouns);
 
   // Step 2b - Use a ternary to establish if the adjective is empty
   // If it is, prepend "The" to the adjective using string interpolation
   // Else, return an empty string
-
+  let isAdjectiveEmpty = adjective ? `The ${adjective}` : "";
 
   // Step 2c - Return a string by first placing adjective, firstNoun
   // and secondNoun into an array, and then using the join array
   // method to convert it to a string
-
+  let nameArray = [adjective, firstNoun, secondNoun];
+  let nameString = nameArray.join(" ");
 }
 
 
