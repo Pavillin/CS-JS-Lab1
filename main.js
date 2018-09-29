@@ -39,39 +39,41 @@ function generateCharacterName () {
 
 // Step 3a - Select and store the H1 element
 // in a variable named 'h1'
-
+let h1 = document.querySelector('h1');
 
 // Step 3b - Select and store the origin h2 element
 // in a variable named 'originH2'
+let originH2 = document.querySelector('#origin h2');
 
 
 // Step 3c - Select and store the origin p element
 // in a variable named 'originP'
-
+let originP = document.querySelector('#origin p');
 
 // Step 3d - Select and store the tbody of the stats table
 // in a variable named 'tbody'
-
+let tbody = document.querySelector('#stats tbody');
 
 
 // Step 4a - Randomly select an alter ego from the alterEgos array
 // and store it a variable named 'alterEgo'
-
+let alterEgo = randomArrayElement(alterEgos);
 
 // Step 4b - Generate a character name
 // and store it a variable named 'character'
-
+let character = generateCharacterName();
 
 // Step 4c - Randomly select a power from the powers array
 // and store it a variable named 'power'
-
+let power = randomArrayElement(powers);
 
 // Step 4a - Randomly select a character type from this list of types:
 // superhero, villain, mercenary, anti-hero
 // By passing it as an array to the randomArrayElement function as an
 // argument.
 // Store the returned value into a variable named 'type'
-
+const characterTypes = ["Superhero", "Villain", "Mercenary", "Anti-hero"];
+let type = randomArrayElement(characterTypes);
 
 
 // Step 5 - Replace the h1 content ':character:' with your character's name
