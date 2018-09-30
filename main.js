@@ -27,7 +27,7 @@ function generateCharacterName () {
   // Step 2b - Use a ternary to establish if the adjective is empty
   // If it is, prepend "The" to the adjective using string interpolation
   // Else, return an empty string
-  adjective ? "" : `The ${adjective}`;
+  adjective ? "" : (adjective = `The ${adjective}`);
 
   // Step 2c - Return a string by first placing adjective, firstNoun
   // and secondNoun into an array, and then using the join array
