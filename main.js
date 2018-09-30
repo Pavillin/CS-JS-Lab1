@@ -27,7 +27,7 @@ function generateCharacterName () {
   // Step 2b - Use a ternary to establish if the adjective is empty
   // If it is, prepend "The" to the adjective using string interpolation
   // Else, return an empty string
-  adjective ? `The ${adjective}` : "";
+  adjective ? "" : `The ${adjective}`;
 
   // Step 2c - Return a string by first placing adjective, firstNoun
   // and secondNoun into an array, and then using the join array
@@ -78,7 +78,7 @@ let type = randomArrayElement(characterTypes);
 
 
 // Step 5 - Replace the h1 content ':character:' with your character's name
-h1.innerHTML.replace(':character:', character);
+h1.innerHTML = h1.innerHTML.replace(':character:', character);
 
 // Step 6 - Create a multidimensional array in this structure:
 // [ [ 'Label', value ] ]
@@ -121,19 +121,19 @@ for(let tdLabelAndValue of valueAndLabel) {
 let story = randomArrayElement(origins);
 
 // Step 7a - Replace the originH2 ':character:' content with our character name
-originH2.innerHTML.replace(':character:', character);
+originH2.innerHTML = originH2.innerHTML.replace(':character:', character);
 
 // Step 7b - Replace all instances of ':character:' in 'story' with our
 // character name
-story.replace(/:character:/g, character);
+story = story.replace(/:character:/g, character);
 
 // Step 7c - Replace all instances of ':alterego:' in 'story' with our
 // alter ego
-story.replace(/:alterego:/g, alterEgo);
+story = story.replace(/:alterego:/g, alterEgo);
 
 // Step 7d - Replace all instances of ':power:' in 'story' with our
 // power
-story.replace(/:power:/g, power);
+story = story.replace(/:power:/g, power);
 
 // Step 7e - Output the story to the origin paragraph tag
 document.querySelector('p').innerHTML = story;
