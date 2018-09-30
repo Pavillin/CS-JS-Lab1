@@ -27,13 +27,14 @@ function generateCharacterName () {
   // Step 2b - Use a ternary to establish if the adjective is empty
   // If it is, prepend "The" to the adjective using string interpolation
   // Else, return an empty string
-  let isAdjectiveEmpty = adjective ? `The ${adjective}` : "";
+  adjective ? `The ${adjective}` : "";
 
   // Step 2c - Return a string by first placing adjective, firstNoun
   // and secondNoun into an array, and then using the join array
   // method to convert it to a string
   let nameArray = [adjective, firstNoun, secondNoun];
   let nameString = nameArray.join(" ");
+  return nameString;
 }
 
 
@@ -77,8 +78,7 @@ let type = randomArrayElement(characterTypes);
 
 
 // Step 5 - Replace the h1 content ':character:' with your character's name
-stringDisplay(h1.replace(":character", character));
-
+h1.innerHTML.replace(':character:', character);
 
 // Step 6 - Create a multidimensional array in this structure:
 // [ [ 'Label', value ] ]
@@ -101,13 +101,13 @@ for(let tdLabelAndValue of valueAndLabel) {
 
   // Step 6d - Create a new 'td' element
   // and store it in a variable named 'tdValue'
-  le tdValue = document.createElement('td');
+  let tdValue = document.createElement('td');
 
   // Step 6e - Set the tdLabel text to equal the value from 'label'
-
+  tdLabel.innerHTML = label;
 
   // Step 6f - Set the tdValue text to equal the value from 'value'
-
+  tdValue.innerHTML = value;
 
   tr.appendChild(tdLabel);
   tr.appendChild(tdValue);
@@ -118,21 +118,22 @@ for(let tdLabelAndValue of valueAndLabel) {
 
 // Step 7 - Select and store a random origin from the array origins.
 // Store it in a variable named 'story'
-
+let story = randomArrayElement(origins);
 
 // Step 7a - Replace the originH2 ':character:' content with our character name
-
+originH2.innerHTML.replace(':character:', character);
 
 // Step 7b - Replace all instances of ':character:' in 'story' with our
 // character name
-
+story.replace(/:character:/g, character);
 
 // Step 7c - Replace all instances of ':alterego:' in 'story' with our
 // alter ego
-
+story.replace(/:alterego:/g, alterEgo);
 
 // Step 7d - Replace all instances of ':power:' in 'story' with our
 // power
-
+story.replace(/:power:/g, power);
 
 // Step 7e - Output the story to the origin paragraph tag
+document.querySelector('p').innerHTML = story;
