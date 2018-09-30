@@ -77,7 +77,7 @@ let type = randomArrayElement(characterTypes);
 
 
 // Step 5 - Replace the h1 content ':character:' with your character's name
-
+stringDisplay(h1.replace(":character", character));
 
 
 // Step 6 - Create a multidimensional array in this structure:
@@ -85,23 +85,23 @@ let type = randomArrayElement(characterTypes);
 // and store it in a constant variable named 'valueAndLabel'.
 // The labels (and order) will be:
 // Character Name, Alter Ego, Power, and Character Type
-
+const valueAndLabel = [['Character Name', character], ['Alter Ego', alterEgo], ['Power', power], ['Character Type', type]];
 
 for(let tdLabelAndValue of valueAndLabel) {
   // Step 6a - Using destructuring, create 2 new variables named 'label' and 'value', and store the elements in tdLabelAndValue in them
-
+  let [label, value] = tdLabelAndValue;
 
   // Step 6b - Create a new 'tr' element
   // and store it in a variable named 'tr'
-
+  let tr = document.createElement('tr');
 
   // Step 6c - Create a new 'td' element
   // and store it in a variable named 'tdLabel'
-
+  let tdLabel = document.createElement('td');
 
   // Step 6d - Create a new 'td' element
-  // and store it in a variable named 'tdLabel'
-
+  // and store it in a variable named 'tdValue'
+  le tdValue = document.createElement('td');
 
   // Step 6e - Set the tdLabel text to equal the value from 'label'
 
